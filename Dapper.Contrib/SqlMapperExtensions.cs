@@ -10,6 +10,7 @@ using System.Reflection.Emit;
 using System.Threading;
 using System.Runtime.CompilerServices;
 using Dapper;
+using Dapper.Contrib;
 
 namespace Dapper.Contrib.Extensions
 {

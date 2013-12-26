@@ -50,6 +50,12 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dapper NET40\Dapper NET40.csproj">
+      <Project>{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}</Project>
+      <Name>Dapper NET40</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
