@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper", "Dapper\Dapper.csproj", "{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTests", "Tests\DapperTests.csproj", "{A2A80512-11F4-4028-A995-505463632C84}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper NET35", "Dapper NET35\Dapper NET35.csproj", "{B26305D8-3A89-4D68-A981-9BBF378B81FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper.Contrib", "Dapper.Contrib\Dapper.Contrib.csproj", "{C2FC4DF5-C8D1-4EA8-8E0C-85A3793EB0BB}"
@@ -27,26 +23,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|x86.ActiveCfg = Release|Any CPU
-		{A2A80512-11F4-4028-A995-505463632C84}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Debug|x86.ActiveCfg = Debug|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Debug|x86.Build.0 = Debug|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Release|Any CPU.ActiveCfg = Release|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Release|Mixed Platforms.Build.0 = Release|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Release|x86.ActiveCfg = Release|x86
-		{A2A80512-11F4-4028-A995-505463632C84}.Release|x86.Build.0 = Release|x86
 		{B26305D8-3A89-4D68-A981-9BBF378B81FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B26305D8-3A89-4D68-A981-9BBF378B81FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B26305D8-3A89-4D68-A981-9BBF378B81FA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

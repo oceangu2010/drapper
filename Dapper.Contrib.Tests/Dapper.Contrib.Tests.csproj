@@ -61,10 +61,6 @@
     <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dapper NET40\Dapper NET40.csproj">
-      <Project>{daf737e1-05b5-4189-a5aa-dac6233b64d7}</Project>
-      <Name>Dapper NET40</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Dapper.Contrib\Dapper.Contrib.csproj">
       <Project>{C2FC4DF5-C8D1-4EA8-8E0C-85A3793EB0BB}</Project>
       <Name>Dapper.Contrib</Name>

@@ -54,12 +54,6 @@
   <ItemGroup>
     <None Include="Dapper.Contrib.nuspec" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dapper NET40\Dapper NET40.csproj">
-      <Project>{daf737e1-05b5-4189-a5aa-dac6233b64d7}</Project>
-      <Name>Dapper NET40</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
