@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper.Rainbow", "Dapper.Ra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper NET40", "Dapper NET40\Dapper NET40.csproj", "{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperWeb", "DapperWeb\DapperWeb.csproj", "{D321375B-A195-4609-A639-37CCD9131760}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,16 @@ Global
 		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{DAF737E1-05B5-4189-A5AA-DAC6233B64D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D321375B-A195-4609-A639-37CCD9131760}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
