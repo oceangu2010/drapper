@@ -44,13 +44,15 @@ namespace Dapper.Contrib.Tests
             {
                 WebClient wc = new WebClient();
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.nakhonchaiair.com/ncabooking/frm_ncabooking.php");
-                CookieContainer cookie = new CookieContainer();//request.CookieContainer;//wc.ResponseHeaders[HttpResponseHeader.SetCookie];//如果用不到Cookie，删去即可  
-                request.CookieContainer = cookie;//new CookieContainer();  
+               // CookieContainer cookie = new CookieContainer();//request.CookieContainer;//wc.ResponseHeaders[HttpResponseHeader.SetCookie];//如果用不到Cookie，删去即可  
+               // request.CookieContainer = cookie;//new CookieContainer();  
 
                 //以下是发送的http头，随便加，其中referer挺重要的，有些网站会根据这个来反盗链  
                 //string postDataStr = "fn_busline=2_1&fd_date1=2014-01-10&fd_date1_dp=1&fd_date1_year_start=2013&fd_date1_year_end=2014&fd_date1_da1=1388077200&fd_date1_da2=1419613200&fd_date1_sna=1&fd_date1_aut=&fd_date1_frm=&fd_date1_tar=&fd_date1_inp=&fd_date1_fmt=l+d+F+Y&fd_date1_dis=&fd_date1_pr1=&fd_date1_pr2=&fd_date1_prv=&fd_date1_pth=calendar%2F&fd_date1_spd=%5B%5B%5D%2C%5B%5D%2C%5B%5D%5D&fd_date1_spt=0&fd_date1_och=&fd_date1_str=1&fd_date1_rtl=0&fd_date1_wks=&fd_date1_int=1&fd_date1_hid=0&fd_date1_hdt=3000&fd_date1_hl=th_TH&fd_date1_dig=0&fd_date1_ttd=%5B%5B%5D%2C%5B%5D%2C%5B%5D%5D&fd_date1_ttt=%255B%255B%255D%252C%255B%255D%252C%255B%255D%255D&btn_filter=%26%2323637%3B%26%2331034%3B%3E%3E";//这里即为传递的参数，可以用工具抓包分析，也可以自己分析，主要是form里面每一个name都要加进来  
                 string postDataStr = "fn_busline=1_9&fd_date1=2014-01-10&pd_date=2014-01-10&pn_src=1&pn_des=9&pn_busline=13&pn_buslinetype=1&pn_bustype=1&pn_srctime=2025&pn_leavetime=2025&fn_leavetime=3";
                 request.Host = "www.nakhonchaiair.com";
+                //<SPAN class=key>request.Headers.Add(HttpRequestHeader.Cookie, "ASPSESSIONIDSCATBTAD=KNNDKCNBONBOOBIHHHHAOKDM;");</SPAN> 
+                request.Headers.Add(HttpRequestHeader.Cookie, "PHPSESSID=234fe4859v8rtmivsv5mnuk4d6");
                 request.Referer = "http://www.nakhonchaiair.com/ncabooking/frm_ncabooking.php";
                 request.Accept = "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
                 request.Headers["Accept-Language"] = "zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4";
