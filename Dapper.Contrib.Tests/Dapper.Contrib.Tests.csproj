@@ -58,7 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assert.cs" />
-    <Compile Include="Bussise\ReadFile.cs" />
+    <Compile Include="Business\PostRequest.cs" />
+    <Compile Include="Business\ReadFile.cs" />
     <Compile Include="Entity\PlaceNameEntity.cs" />
     <Compile Include="Models\Generated\Database.cs" />
     <Compile Include="Models\Generated\Database1.cs">

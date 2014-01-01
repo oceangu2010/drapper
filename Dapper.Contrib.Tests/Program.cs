@@ -10,7 +10,7 @@ using System.Text;
 using System.Web;
 using System.Net;
 using System.IO.Compression;
-using Dapper.Contrib.Tests.Bussice;
+using Dapper.Contrib.Tests.Business;
 
 namespace Dapper.Contrib.Tests
 {
@@ -21,19 +21,19 @@ namespace Dapper.Contrib.Tests
             //Setup();
             //RunTests();
 
-           string result = GetPost2();
+            string result = PostRequest.GetAjaxArriveCity();//GetPost2();
            Console.WriteLine(result);
 
-           //Dapper.Contrib.Tests.Entity.TicketData ticketData = ReadFile.ReadTicketData();
-           //int sendCityCount = 0, arriveCityCount = 0;
-           //if (ticketData != null)
-           //{
-           //    ticketData.SendData.ForEach(item => sendCityCount +=item.CityData.Count );
-           //    ticketData.ArriveData.ForEach(item => arriveCityCount += item.CityData.Count);
-           //}
+           Dapper.Contrib.Tests.Entity.TicketData ticketData = ReadFile.ReadTicketData();
+           int sendCityCount = 0, arriveCityCount = 0;
+           if (ticketData != null)
+           {
+               ticketData.SendData.ForEach(item => sendCityCount += item.CityData.Count);
+               ticketData.ArriveData.ForEach(item => arriveCityCount += item.CityData.Count);
+           }
 
-           //Console.WriteLine("send city number:" + sendCityCount.ToString()+"(原:383)");
-           //Console.WriteLine("arrive city number:" + arriveCityCount.ToString() + "(原:383)");
+           Console.WriteLine("send city number:" + sendCityCount.ToString() + "(原:383)");
+           Console.WriteLine("arrive city number:" + arriveCityCount.ToString() + "(原:383)");
 
            Console.ReadKey();
         }

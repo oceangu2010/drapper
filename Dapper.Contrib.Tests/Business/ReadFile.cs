@@ -6,7 +6,7 @@ using System.IO;
 
 using Dapper.Contrib.Tests.Entity;
 
-namespace Dapper.Contrib.Tests.Bussice
+namespace Dapper.Contrib.Tests.Business
 {
     public class ReadFile
     {
