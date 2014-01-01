@@ -10,6 +10,7 @@ using System.Text;
 using System.Web;
 using System.Net;
 using System.IO.Compression;
+using Dapper.Contrib.Tests.Bussice;
 
 namespace Dapper.Contrib.Tests
 {
@@ -19,11 +20,22 @@ namespace Dapper.Contrib.Tests
         {
             //Setup();
             //RunTests();
-            string result = GetPost();
-            Console.WriteLine(result);
 
+           string result = GetPost2();
+           Console.WriteLine(result);
 
-            Console.ReadKey();
+           //Dapper.Contrib.Tests.Entity.TicketData ticketData = ReadFile.ReadTicketData();
+           //int sendCityCount = 0, arriveCityCount = 0;
+           //if (ticketData != null)
+           //{
+           //    ticketData.SendData.ForEach(item => sendCityCount +=item.CityData.Count );
+           //    ticketData.ArriveData.ForEach(item => arriveCityCount += item.CityData.Count);
+           //}
+
+           //Console.WriteLine("send city number:" + sendCityCount.ToString()+"(原:383)");
+           //Console.WriteLine("arrive city number:" + arriveCityCount.ToString() + "(原:383)");
+
+           Console.ReadKey();
         }
 
         private static void Get()
@@ -49,10 +61,10 @@ namespace Dapper.Contrib.Tests
 
                 //以下是发送的http头，随便加，其中referer挺重要的，有些网站会根据这个来反盗链  
                 //string postDataStr = "fn_busline=2_1&fd_date1=2014-01-10&fd_date1_dp=1&fd_date1_year_start=2013&fd_date1_year_end=2014&fd_date1_da1=1388077200&fd_date1_da2=1419613200&fd_date1_sna=1&fd_date1_aut=&fd_date1_frm=&fd_date1_tar=&fd_date1_inp=&fd_date1_fmt=l+d+F+Y&fd_date1_dis=&fd_date1_pr1=&fd_date1_pr2=&fd_date1_prv=&fd_date1_pth=calendar%2F&fd_date1_spd=%5B%5B%5D%2C%5B%5D%2C%5B%5D%5D&fd_date1_spt=0&fd_date1_och=&fd_date1_str=1&fd_date1_rtl=0&fd_date1_wks=&fd_date1_int=1&fd_date1_hid=0&fd_date1_hdt=3000&fd_date1_hl=th_TH&fd_date1_dig=0&fd_date1_ttd=%5B%5B%5D%2C%5B%5D%2C%5B%5D%5D&fd_date1_ttt=%255B%255B%255D%252C%255B%255D%252C%255B%255D%255D&btn_filter=%26%2323637%3B%26%2331034%3B%3E%3E";//这里即为传递的参数，可以用工具抓包分析，也可以自己分析，主要是form里面每一个name都要加进来  
-                string postDataStr = "fn_busline=1_9&fd_date1=2014-01-10&pd_date=2014-01-10&pn_src=1&pn_des=9&pn_busline=13&pn_buslinetype=1&pn_bustype=1&pn_srctime=2025&pn_leavetime=2025&fn_leavetime=3";
+                string postDataStr = "fn_busline=3_1&fd_date1=2014-01-10&pd_date=2014-01-10&pn_src=3&pn_des=1&pn_busline=2&pn_buslinetype=2&pn_bustype=1&pn_srctime=2000&pn_leavetime=2000&fn_leavetime=15";
                 request.Host = "www.nakhonchaiair.com";
                 //<SPAN class=key>request.Headers.Add(HttpRequestHeader.Cookie, "ASPSESSIONIDSCATBTAD=KNNDKCNBONBOOBIHHHHAOKDM;");</SPAN> 
-                request.Headers.Add(HttpRequestHeader.Cookie, "PHPSESSID=234fe4859v8rtmivsv5mnuk4d6");
+                request.Headers.Add(HttpRequestHeader.Cookie, "PHPSESSID=nmmb0min43msf4sehktpl8o2j0");//PHPSESSID=234fe4859v8rtmivsv5mnuk4d6
                 request.Referer = "http://www.nakhonchaiair.com/ncabooking/frm_ncabooking.php";
                 request.Accept = "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
                 request.Headers["Accept-Language"] = "zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4";
@@ -96,14 +108,15 @@ namespace Dapper.Contrib.Tests
 
         private static string GetPost2()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://booking.busticket.in.th/availabletrip.php");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://booking.busticket.in.th/index.php");//
             request.CookieContainer = new CookieContainer();
             CookieContainer cookie = request.CookieContainer;//如果用不到Cookie，删去即可  
-            //以下是发送的http头，随便加，其中referer挺重要的，有些网站会根据这个来反盗链  
+            //以下是发送的http头，随便加，其中referer挺重要的，有些网站会根据这个来反盗链http://booking.busticket.in.th/availabletrip.php  
             //这里传值使用了urlencode加密方式
-            string postDataStr = "triptype=oneway&departcity=%E0%B8%9E%E0%B8%B1%E0%B8%87%E0%B8%87%E0%B8%B2&departterminal=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B2%E0%B8%A3+%E0%B8%AD.%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B8%B2%E0%B8%82%E0%B8%B8%E0%B8%99&" +
-                "arrivecity=%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3&arriveterminal=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%AF+%28%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%9A%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%8A%E0%B8%99%E0%B8%99%E0%B8%B5%29&" +
-                "departdate=29&departmonth=12%2F2013";//&Submit=%E5%AF%BB%E6%89%BE%E4%B8%80%E4%B8%AA%E8%BD%A6%EF%BC%81";//这里即为传递的参数，可以用工具抓包分析，也可以自己分析，主要是form里面每一个name都要加进来  
+            //string postDataStr = "triptype=oneway&departcity=%E0%B8%9E%E0%B8%B1%E0%B8%87%E0%B8%87%E0%B8%B2&departterminal=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B2%E0%B8%A3+%E0%B8%AD.%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B8%B2%E0%B8%82%E0%B8%B8%E0%B8%99&" +
+            //    "arrivecity=%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3&arriveterminal=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B5%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%AF+%28%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%9A%E0%B8%A3%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%8A%E0%B8%99%E0%B8%99%E0%B8%B5%29&" +
+            //    "departdate=29&departmonth=12%2F2013";//&Submit=%E5%AF%BB%E6%89%BE%E4%B8%80%E4%B8%AA%E8%BD%A6%EF%BC%81";//这里即为传递的参数，可以用工具抓包分析，也可以自己分析，主要是form里面每一个name都要加进来  
+            string postDataStr = string.Empty;
 
             request.Referer = "http://booking.busticket.in.th/index.php";
             request.Accept = "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
