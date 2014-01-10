@@ -144,10 +144,12 @@ namespace Dapper
             Link<Type, Action<IDbCommand, bool>>.TryAdd(ref bindByNameCache, commandType, ref action);
             return action;
         }
+
         /// <summary>
         /// This is a micro-cache; suitable when the number of terms is controllable (a few hundred, for example),
         /// and strictly append-only; you cannot change existing values. All key matches are on **REFERENCE**
         /// equality. The type is fully thread-safe.
+        /// ¡¥±Ì¿‡
         /// </summary>
         partial class Link<TKey, TValue> where TKey : class
         {

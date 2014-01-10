@@ -24,9 +24,9 @@ namespace Dapper.Contrib.Tests
             /*
            string result = PostRequest.GetAjaxArriveCity();
            Console.WriteLine(result);*/
-
-           string result2 = PostRequest.GetPostBusticket();
-           Console.WriteLine(result2);
+           // PostRequest.RegTest();
+            string result2 = PostRequest.GetPostBusticket();
+           //Console.WriteLine(result2);
 
             /*
            Dapper.Contrib.Tests.Entity.TicketData ticketData = ReadFile.ReadTicketData();

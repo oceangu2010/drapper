@@ -76,6 +76,7 @@ namespace Dapper.Contrib.Tests
                 user.Id.IsEqualTo((int)id);
                 user.Name.IsEqualTo("Adama");
                 connection.Delete(user);
+                
             }
         }
 
